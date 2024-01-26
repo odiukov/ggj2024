@@ -2,64 +2,97 @@ namespace Minigames
 {
     using System;
     using UnityEngine;
+    using UnityEngine.Events;
     using UnityEngine.EventSystems;
 
-    public class ConnectLine : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+    public class ConnectLine : MonoBehaviour
     {
         [SerializeField] private LineColor LineColor;
-        
-        [SerializeField] private RectTransform rectTransform;
+
+        [SerializeField] private Transform endTransform;
 
         [SerializeField] private LineRenderer LineRenderer;
-        
-        private Vector3 startPoint;
-        
-        // private RectTransform rectTransform;
-        private Canvas canvas;
-        // private CanvasGroup canvasGroup;
 
-        private bool isDragging = false;
+
+        [SerializeField] private LayerMask TVLayerMask;
+
+        private Vector2 defaultPosition;
+        private Vector2 startDragPosition;
+        private bool returnToStartPosition;
+
+
+        private Vector3 startPoint;
+
+        private static ConnectEndPoint endPoint;
+
 
         void Start()
         {
-            // rectTransform = GetComponent<RectTransform>();
-            canvas = GetComponentInParent<Canvas>();
+            LineRenderer.transform.SetParent(null);
+            LineRenderer.transform.position = Vector3.zero;
         }
 
         private void Update()
         {
-            LineRenderer.SetPosition(0, startPoint);
-            LineRenderer.SetPosition(1, Camera.main.ScreenToViewportPoint(rectTransform.transform.position));
-        }
+            LineRenderer.SetPosition(0, transform.position);
+            LineRenderer.SetPosition(1, endTransform.position);
 
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            // Set the element as being dragged
-            isDragging = true;
-        
-            // Make the UI element appear on top of other UI elements
-            rectTransform.SetAsLastSibling();
-
-            // Disable the Raycast Target to allow interaction with other UI elements
-            // canvasGroup.blocksRaycasts = false;
-        }
-
-        public void OnDrag(PointerEventData eventData)
-        {
-            if (isDragging)
+            if (Input.GetMouseButtonDown(0))
             {
-                // Move the UI element based on the pointer's position
-                rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,
+                    Single.PositiveInfinity, TVLayerMask);
+                endPoint = hit.collider != null ? hit.transform.GetComponent<ConnectEndPoint>() : null;
+
+                OnMouseDown();
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                OnMouseUp();
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                OnMouseDrag();
             }
         }
 
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            // Set the element as no longer being dragged
-            isDragging = false;
 
-            // Enable the Raycast Target to allow normal interaction with other UI elements
-            // canvasGroup.blocksRaycasts = true;
+        private void OnMouseDown()
+        {
+            // defaultPosition = transform.position;
+            //
+            // Vector2 mousePosition = Input.mousePosition;
+            // mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            //
+            // var localPosition = transform.localPosition;
+            // startDragPosition.x = mousePosition.x - localPosition.x;
+            // startDragPosition.y = mousePosition.y - localPosition.y;
+        }
+
+        private void OnMouseUp()
+        {
+        }
+
+        private void OnMouseDrag()
+        {
+            if(endPoint == null)
+                return;
+            
+            if (endPoint != null && endPoint.transform != endTransform)
+            {
+                return;
+            }
+
+            Vector2 mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            endTransform.position =
+                new Vector3(mousePosition.x, mousePosition.y, 0);
+        }
+
+        public void SetEnd(Transform endPoint)
+        {
+            endTransform.position = endPoint.position;
         }
     }
 
