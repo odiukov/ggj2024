@@ -1,14 +1,21 @@
 namespace Audience
 {
+    using System;
     using UnityEngine;
     using Zenject;
+    using Random = UnityEngine.Random;
 
     public interface IEmotionsProvider
     {
         Emotion GetEmotion();
     }
 
-    class EmotionsProvider : IEmotionsProvider, ITickable
+    public interface IEmotionsEventEmitter
+    {
+        event Action<float> EmotionChanged;
+    }
+
+    class EmotionsProvider : IEmotionsProvider, ITickable, IEmotionsEventEmitter
     {
         [Inject] public ICrashProvider CrashProvider { get; set; }
 
@@ -19,17 +26,7 @@ namespace Audience
 
         public Emotion GetEmotion()
         {
-            float happines = 0.5f;
-            if (_currentHappines > 0.5)
-            {
-                happines = 0.8f;
-            }
-
-            if (_currentHappines < -0.5)
-            {
-                happines = 0.2f;
-            }
-
+            var happines = (_currentHappines - MinHappines) / (MaxHappines - MinHappines);
             return Random.value <= happines ? Emotion.Happy : Emotion.Sad;
         }
 
@@ -45,10 +42,13 @@ namespace Audience
             }
 
             _currentHappines = Mathf.Clamp(_currentHappines, MinHappines, MaxHappines);
+            EmotionChanged?.Invoke(_currentHappines);
         }
+
+        public event Action<float> EmotionChanged;
     }
 
-    public enum Emotion : int
+    public enum Emotion
     {
         Happy = 1,
         Sad = -1

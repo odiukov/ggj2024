@@ -23,7 +23,7 @@ namespace Player
             AudienceInvolvement.ProgressChanged += SetHealth;
         }
 
-        private void SetHealth(Emotion value)
+        private void SetHealth(string guest, Emotion value)
         {
             _currentHealth = Mathf.Min(maxHealth, _currentHealth + (int)value);
             healthBar.SetText(((int)_currentHealth).ToString());

@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Emotions
+    uniqueID: 1491574561
+    locked: 0
+  - name: Audience
+    uniqueID: 3985005785
+    locked: 0
+  - name: HUD
+    uniqueID: 744249833
+    locked: 0
