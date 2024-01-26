@@ -6,8 +6,6 @@ namespace Audience
 
     public class Audience : MonoBehaviour
     {
-        [SerializeField] Camera camera;
-
         [Inject] public IEmotionsIconProvider EmotionsIconProvider { get; set; }
         [Inject] public IGuestProvider GuestProvider { get; set; }
         [Inject] public DiContainer Container { get; set; }
@@ -36,11 +34,6 @@ namespace Audience
                                        new Vector3(UnityEngine.Random.Range(-xOffSet, xOffSet),
                                            UnityEngine.Random.Range(-yOffSet, yOffSet), 0);
             _guests.Add(guestId, guest);
-        }
-
-        private void Update()
-        {
-            camera.Render();
         }
 
         private void OnProgressChanged(string guest, Emotion emotion)
