@@ -4,18 +4,18 @@ namespace Core
 
     public class WindowOpener : IWindowOpener
     {
-        private Canvas root;
+        // private Canvas root;
         
         public T Create<T>() where T : MonoBehaviour, IWindow
         {
-            if (root == null)
+            // if (root == null)
             {
-                root = Object.FindObjectOfType<Canvas>();
+                // root = Object.FindObjectOfType<Canvas>();
             }
             
             var window = Resources.Load<T>(typeof(T).Name);
             window.gameObject.SetActive(false);
-            return Object.Instantiate(window, root.transform);
+            return Object.Instantiate(window, Vector3.zero, Quaternion.identity);
         }
     }
 }
