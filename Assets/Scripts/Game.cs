@@ -16,7 +16,7 @@ namespace DefaultNamespace
 
         private void Start()
         {
-            SoundService.Play(SoundEffect.BackgroundGame, 0.5f, true);
+            SoundService.Play(SoundEffect.BackgroundGame, 0.1f, true);
             AlertService.Initialize();
         }
     }

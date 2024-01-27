@@ -1,6 +1,7 @@
 namespace Minigames
 {
     using System;
+    using Gameplay.Game.Services;
     using JetBrains.Annotations;
     using Sirenix.OdinInspector;
     using Sirenix.Serialization;
@@ -11,6 +12,7 @@ namespace Minigames
     {
         [Inject] public DiContainer DiContainer { get; set; }
         [Inject] public IAlertService AlertService { get; set; }
+        [Inject] public SoundService SoundService { get; set; }
         public bool IsActive { get; private set; }
 
         [SerializeField] private Animator _animator;
@@ -30,11 +32,13 @@ namespace Minigames
             {
                 return;
             }
-            
+
+            SoundService.Play(SoundEffect.StartMinigame, 1.0f);
             var result = await _miniGame.Run();
             if (result == MiniGameResult.Success)
             {
                 IsActive = false;
+                SoundService.Play(SoundEffect.FinishMinigame, 1.0f);
                 _animator?.SetTrigger("Normal");
                 AlertService.RefreshAlerts();
             }
@@ -43,6 +47,7 @@ namespace Minigames
         public void Activate()
         {
             IsActive = true;
+            SoundService.Play(SoundEffect.AlarmMinigame, 1.0f, true);
             _animator?.SetTrigger("Alarm");
         }
     }
