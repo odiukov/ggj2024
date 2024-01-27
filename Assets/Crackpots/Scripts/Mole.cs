@@ -10,7 +10,7 @@ public class Mole : MonoBehaviour {
   [SerializeField] private Sprite moleHatHit;
 
   [Header("GameManager")]
-  [SerializeField] private GameManager gameManager;
+  [SerializeField] private GameManagerCrackpots gameManager;
 
   // The offset of the sprite to hide it.
   private Vector2 startPosition = new Vector2(0f, -2.56f);
