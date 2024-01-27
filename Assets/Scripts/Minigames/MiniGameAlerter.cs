@@ -4,24 +4,44 @@ namespace Minigames
     using JetBrains.Annotations;
     using Sirenix.OdinInspector;
     using Sirenix.Serialization;
+    using UnityEngine;
     using Zenject;
 
     public class MiniGameAlerter : SerializedMonoBehaviour
     {
         [Inject] public DiContainer DiContainer { get; set; }
+        public bool IsActive { get; private set; }
+
+        [SerializeField] private Animator _animator;
         
         [OdinSerialize]
         private IMiniGame _miniGame;
-
+        
         private void Start()
         {
             DiContainer.Inject(_miniGame);
         }
 
         [UsedImplicitly]
-        public void OnClick()
+        public async void OnMouseDown()
         {
-            _miniGame.Run();
+            if (!IsActive)
+            {
+                return;
+            }
+            
+            var result = await _miniGame.Run();
+            if (result == MiniGameResult.Success)
+            {
+                IsActive = false;
+                _animator?.SetTrigger("Normal");
+            }
+        }
+
+        public void Activate()
+        {
+            IsActive = true;
+            _animator?.SetTrigger("Alarm");
         }
     }
 }
