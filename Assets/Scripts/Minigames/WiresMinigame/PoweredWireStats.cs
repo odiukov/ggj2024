@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public enum Color { blue, green, red, yellow };
+public enum WireColor { blue, green, red, yellow };
 
 public class PoweredWireStats : MonoBehaviour
 {
     [SerializeField] public bool movable = false;
     [SerializeField] public bool moving = false;
     [SerializeField] public Vector3 startPosition;
-    [SerializeField] public Color color;
+    [FormerlySerializedAs("color")] [SerializeField] public WireColor wireColor;
     [SerializeField] public bool connected = false;
     [SerializeField] public Vector3 connectedPos;
 

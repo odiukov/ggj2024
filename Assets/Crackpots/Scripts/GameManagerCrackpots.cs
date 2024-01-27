@@ -3,7 +3,7 @@ using Minigames.SecondGame;
 using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManagerCrackpots : MonoBehaviour
 {
     [SerializeField] private TMP_Text ratLeftCounter;
     [SerializeField] private List<Mole> moles;
