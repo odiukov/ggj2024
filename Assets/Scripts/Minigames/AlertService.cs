@@ -1,14 +1,21 @@
 namespace Minigames
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Audience;
     using UnityEngine;
     using Zenject;
+    using Object = UnityEngine.Object;
+    using Random = UnityEngine.Random;
 
     public interface IAlertService
     {
         void Initialize();
+        
+        event Action Refresh;
+        
+        void RefreshAlerts();
     }
 
     public class AlertService : IAlertService, ITickable, ICrashProvider
@@ -31,7 +38,9 @@ namespace Minigames
         private void Activate()
         {
             if (_miniGameAlerters == null || !_miniGameAlerters.Any())
+            {
                 return;
+            }
 
             var miniGameAlerters = _miniGameAlerters.Where(x => !x.IsActive);
 
@@ -43,11 +52,18 @@ namespace Minigames
             var randomAlert =
                 miniGameAlerters.ToList()[Random.Range(0, _miniGameAlerters.Count - 1)];
             randomAlert.Activate();
+            Refresh?.Invoke();
         }
 
         public void Initialize()
         {
             _miniGameAlerters = Object.FindObjectsOfType<MiniGameAlerter>().ToList();
+        }
+
+        public event Action Refresh;
+        public void RefreshAlerts()
+        {
+            Refresh?.Invoke();
         }
 
         public bool HasCrash => _miniGameAlerters != null && _miniGameAlerters.Any(x => x.IsActive);

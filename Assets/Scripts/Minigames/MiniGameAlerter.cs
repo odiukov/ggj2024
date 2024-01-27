@@ -10,6 +10,7 @@ namespace Minigames
     public class MiniGameAlerter : SerializedMonoBehaviour
     {
         [Inject] public DiContainer DiContainer { get; set; }
+        [Inject] public IAlertService AlertService { get; set; }
         public bool IsActive { get; private set; }
 
         [SerializeField] private Animator _animator;
@@ -35,6 +36,7 @@ namespace Minigames
             {
                 IsActive = false;
                 _animator?.SetTrigger("Normal");
+                AlertService.RefreshAlerts();
             }
         }
 
