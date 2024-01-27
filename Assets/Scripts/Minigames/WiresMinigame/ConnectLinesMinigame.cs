@@ -11,7 +11,7 @@ namespace Minigames
 
         public UniTask<MiniGameResult> Run()
         {
-            var window = WindowOpener.Create<ConnectLinesMinigameWindow>();
+            var window = WindowOpener.Create<ConnectLinesMinigameWindow1>();
             window.Show();
             return window.WaitForResult();
         }
