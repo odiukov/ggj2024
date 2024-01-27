@@ -7,8 +7,24 @@ namespace Gameplay.Game.Services
     [Flags]
     public enum SoundEffect
     {
-        Death = 1 << 1,
-        BackgroundGame = 1 << 2,
+        /* Background music */
+        BackgroundGame = 1 << 1,
+        /* Common  */
+        Click = 1 << 2,
+        /* Player */
+        Talk1 = 1 << 3,
+        Talk2 = 1 << 4,
+        Talk3 = 1 << 5,
+        Death = 1 << 6,
+        /* Audience */
+        Applause = 1 << 7,
+        Laugh = 1 << 8,
+        Boo = 1 << 9,
+        /* Minigames common  */
+        AlarmMinigame = 1 << 10,
+        StartMinigame = 1 << 11,
+        FinishMinigame = 1 << 12,
+        /* Background music bitset */
         Background = BackgroundGame
     }
 
