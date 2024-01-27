@@ -128,7 +128,7 @@ public class Mole : MonoBehaviour {
           break;
         case MoleType.Bomb:
           // Game over, 1 for bomb.
-          gameManager.GameOver();
+          gameManager.BombActivated();
           break;
         default:
           break;

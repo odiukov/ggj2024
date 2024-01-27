@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
                 if (!currentMoles.Contains(moles[index]))
                 {
                     currentMoles.Add(moles[index]);
-                    moles[index].Activate(score / 10);
+                    moles[index].Activate(score / 1);
                 }
             }
         }
@@ -97,5 +97,11 @@ public class GameManager : MonoBehaviour
 
         // Remove from active moles.
         currentMoles.Remove(moles[moleIndex]);
+    }
+
+    public void BombActivated()
+    {
+        score -= 10;
+        RefreshText();
     }
 }
