@@ -12,7 +12,7 @@ public class GameManagerFifteen : MonoBehaviour
     private int emptyLocation;
     [SerializeField] private int size;
     
-    
+    bool gameFinished = false;
 
     // Create the game setup with size x size pieces.
     private void CreateGamePieces(float gapThickness)
@@ -67,9 +67,15 @@ public class GameManagerFifteen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameFinished)
+        {
+            return;
+        }
+        
         if(CheckCompletion())
         {
             window.InternalClose();
+            gameFinished = true;
             return;
         }
         
