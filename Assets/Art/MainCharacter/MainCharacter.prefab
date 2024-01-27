@@ -19723,6 +19723,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: -8153919541143422201, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01151401
+      objectReference: {fileID: 0}
+    - target: {fileID: -8153919541143422201, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.263934
+      objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.54
@@ -19767,13 +19775,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4216114682588433906, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3857178
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216114682588433906, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0000000427496
+      objectReference: {fileID: 0}
     - target: {fileID: -2657010014091003348, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 906015956852344241, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1487305785000409885, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531908477718922912, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6297905
       objectReference: {fileID: 0}
     - target: {fileID: 1893239430814565527, guid: 053197f26df934ee59e1518d7f0445d5, type: 3}
       propertyPath: m_LocalPosition.x
