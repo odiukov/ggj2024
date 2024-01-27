@@ -132,6 +132,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -140,11 +153,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 28
-        y: 625
-        width: 62
-        height: 67
+        y: 605
+        width: 64
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +173,12 @@ TextureImporter:
       name: Risorsa 6_1
       rect:
         serializedVersion: 2
-        x: 126
-        y: 621
+        x: 127
+        y: 613
         width: 12
-        height: 67
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +194,12 @@ TextureImporter:
       name: Risorsa 6_2
       rect:
         serializedVersion: 2
-        x: 192
-        y: 623
-        width: 62
-        height: 67
+        x: 193
+        y: 613
+        width: 61
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +215,12 @@ TextureImporter:
       name: Risorsa 6_3
       rect:
         serializedVersion: 2
-        x: 28
-        y: 519
-        width: 62
-        height: 68
+        x: 346
+        y: 629
+        width: 140
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +236,12 @@ TextureImporter:
       name: Risorsa 6_4
       rect:
         serializedVersion: 2
-        x: 127
-        y: 518
-        width: 12
-        height: 66
+        x: 28
+        y: 502
+        width: 64
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +257,12 @@ TextureImporter:
       name: Risorsa 6_5
       rect:
         serializedVersion: 2
-        x: 194
-        y: 521
-        width: 60
-        height: 66
+        x: 346
+        y: 580
+        width: 140
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +278,12 @@ TextureImporter:
       name: Risorsa 6_6
       rect:
         serializedVersion: 2
-        x: 321
-        y: 508
-        width: 195
-        height: 72
+        x: 127
+        y: 510
+        width: 12
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,12 +299,12 @@ TextureImporter:
       name: Risorsa 6_7
       rect:
         serializedVersion: 2
-        x: 28
-        y: 427
-        width: 62
-        height: 69
+        x: 193
+        y: 510
+        width: 61
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,12 +320,12 @@ TextureImporter:
       name: Risorsa 6_8
       rect:
         serializedVersion: 2
-        x: 127
-        y: 427
-        width: 12
-        height: 65
+        x: 346
+        y: 524
+        width: 140
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,12 +341,12 @@ TextureImporter:
       name: Risorsa 6_9
       rect:
         serializedVersion: 2
-        x: 192
-        y: 428
-        width: 62
-        height: 68
+        x: 28
+        y: 410
+        width: 64
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,12 +362,12 @@ TextureImporter:
       name: Risorsa 6_10
       rect:
         serializedVersion: 2
-        x: 321
-        y: 381
-        width: 195
-        height: 72
+        x: 127
+        y: 418
+        width: 12
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,12 +383,12 @@ TextureImporter:
       name: Risorsa 6_11
       rect:
         serializedVersion: 2
-        x: 26
-        y: 322
-        width: 62
-        height: 68
+        x: 193
+        y: 418
+        width: 61
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,12 +404,12 @@ TextureImporter:
       name: Risorsa 6_12
       rect:
         serializedVersion: 2
-        x: 127
-        y: 320
-        width: 12
-        height: 66
+        x: 346
+        y: 475
+        width: 140
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -412,12 +425,12 @@ TextureImporter:
       name: Risorsa 6_13
       rect:
         serializedVersion: 2
-        x: 192
-        y: 322
-        width: 62
-        height: 69
+        x: 28
+        y: 304
+        width: 64
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,12 +446,12 @@ TextureImporter:
       name: Risorsa 6_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 210
-        width: 561
-        height: 63
+        x: 127
+        y: 312
+        width: 12
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,12 +467,12 @@ TextureImporter:
       name: Risorsa 6_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 138
-        width: 561
-        height: 68
+        x: 193
+        y: 312
+        width: 61
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,12 +488,12 @@ TextureImporter:
       name: Risorsa 6_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 67
-        width: 561
-        height: 67
+        x: 343
+        y: 298
+        width: 147
+        height: 146
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -497,11 +510,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 560
-        height: 66
+        y: 208
+        width: 561
+        height: 65
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,6 +522,69 @@ TextureImporter:
       bones: []
       spriteID: 744e5dc53b22d1b4facab69fce2c5268
       internalID: -1497995625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Risorsa 6_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 139
+        width: 561
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89363b09c4d494c6ba4e8456446b9637
+      internalID: 640041031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Risorsa 6_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 69
+        width: 561
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7995c84b0c38c4a6a9325b6206a4f156
+      internalID: 938475665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Risorsa 6_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 561
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5deed4891dd294a55a046e781534a516
+      internalID: 213524272
       vertices: []
       indices: 
       edges: []
@@ -534,7 +610,10 @@ TextureImporter:
       Risorsa 6_15: 173112402
       Risorsa 6_16: 1933140746
       Risorsa 6_17: -1497995625
+      Risorsa 6_18: 640041031
+      Risorsa 6_19: 938475665
       Risorsa 6_2: -1975961106
+      Risorsa 6_20: 213524272
       Risorsa 6_3: 1933065907
       Risorsa 6_4: -1943019526
       Risorsa 6_5: -1316990602
