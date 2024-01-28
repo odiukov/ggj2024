@@ -35,7 +35,8 @@ namespace Player
         {
             if(hp <= 0)
             {
-                SoundService.Play(SoundEffect.Death, 0.1f);
+                SoundService.Stop(SoundEffect.Applause);
+                SoundService.Play(SoundEffect.Death, 0.5f);
                 Animator.SetTrigger("Death");
                 await UniTask.WaitForSeconds(0.5f);
                 CurAnimator.SetTrigger("Close");
