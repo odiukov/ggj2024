@@ -47,7 +47,7 @@ namespace Minigames
         public void Activate()
         {
             IsActive = true;
-            SoundService.Play(SoundEffect.AlarmMinigame, 1.0f, true);
+            SoundService.Play(SoundEffect.AlarmMinigame, 1.0f);
             _animator?.SetTrigger("Alarm");
         }
     }

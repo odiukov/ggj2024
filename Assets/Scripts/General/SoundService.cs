@@ -18,12 +18,14 @@ namespace Gameplay.Game.Services
         Death = 1 << 6,
         /* Audience */
         Applause = 1 << 7,
-        Laugh = 1 << 8,
-        Boo = 1 << 9,
+        Laugh1 = 1 << 8,
+        Laugh2 = 1 << 9,
+        Laugh3 = 1 << 10,
+        Boo = 1 << 11,
         /* Minigames common  */
-        AlarmMinigame = 1 << 10,
-        StartMinigame = 1 << 11,
-        FinishMinigame = 1 << 12,
+        AlarmMinigame = 1 << 12,
+        StartMinigame = 1 << 13,
+        FinishMinigame = 1 << 14,
         /* Background music bitset */
         Background = BackgroundGame
     }
@@ -86,13 +88,19 @@ namespace Gameplay.Game.Services
 
             if (audioSource.clip == effect && loop)
                 return;
-            audioSource.Stop();
 
-            audioSource.volume = volume;
-            audioSource.loop = loop;
-            audioSource.clip = effect;
-
-            audioSource.Play();
+            if (audioSource == _effectsSource)
+            {
+                audioSource.PlayOneShot(effect, volume);
+            }
+            else if (audioSource == _bgSource)
+            {
+                audioSource.Stop();
+                audioSource.volume = volume;
+                audioSource.loop = loop;
+                audioSource.clip = effect;
+                audioSource.Play();
+            }
 
             if (!MusicEnabled && audioSource == _bgSource)
             {

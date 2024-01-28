@@ -2,6 +2,7 @@ namespace DefaultNamespace.General
 {
     using System;
     using Audience;
+    using Gameplay.Game.Services;
     using TMPro;
     using UnityEngine;
     using Zenject;
@@ -11,6 +12,14 @@ namespace DefaultNamespace.General
         [SerializeField] TMP_Text jokeText;
 
         [Inject] public ICrashProvider CrashProvider { get; set; }
+        [Inject] public SoundService SoundService { get; set; }
+
+        private SoundEffect[] talkSoundEffects = new[]
+        {
+            SoundEffect.Talk1,
+            SoundEffect.Talk2,
+            SoundEffect.Talk3,
+        };
 
         private string[] jokes = new[]
         {
@@ -80,6 +89,7 @@ namespace DefaultNamespace.General
             {
                 time = 0;
                 jokeText.text = GetRandomJoke();
+                SoundService.Play(GetRandomTalkSound(), 0.3f);
             }
         }
 
@@ -94,6 +104,11 @@ namespace DefaultNamespace.General
             }
 
             return randomJoke;
+        }
+
+        private SoundEffect GetRandomTalkSound()
+        {
+            return talkSoundEffects[UnityEngine.Random.Range(0, talkSoundEffects.Length)];
         }
     }
 }

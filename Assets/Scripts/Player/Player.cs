@@ -2,6 +2,7 @@ namespace Player
 {
     using System;
     using Audience;
+    using Gameplay.Game.Services;
     using Minigames;
     using UnityEngine;
     using Zenject;
@@ -12,6 +13,8 @@ namespace Player
         
         [Inject]
         IAlertService AlertService { get; set; }
+
+        [Inject] public SoundService SoundService { get; set; }
         
         [Inject]
         ICrashProvider CrashProvider { get; set; }
@@ -29,7 +32,10 @@ namespace Player
         private void OnHPChanged(float hp)
         {
             if(hp <= 0)
+            {
+                SoundService.Play(SoundEffect.Death, 0.1f);
                 Animator.SetTrigger("Death");
+            }
         }
 
         private void OnRefresh()

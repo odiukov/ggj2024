@@ -42,15 +42,15 @@ namespace Minigames
                 return;
             }
 
-            var miniGameAlerters = _miniGameAlerters.Where(x => !x.IsActive);
+            var miniGameAlerters = _miniGameAlerters.Where(x => !x.IsActive).ToList();
 
-            if (miniGameAlerters.Count() <= 0)
+            if (miniGameAlerters.Count <= 0)
             {
                 return;
             }
             
             var randomAlert =
-                miniGameAlerters.ToList()[Random.Range(0, _miniGameAlerters.Count - 1)];
+                miniGameAlerters[Random.Range(0, miniGameAlerters.Count - 1)];
             randomAlert.Activate();
             Refresh?.Invoke();
         }

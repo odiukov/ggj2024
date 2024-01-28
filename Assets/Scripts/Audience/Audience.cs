@@ -1,6 +1,7 @@
 namespace Audience
 {
     using System.Collections.Generic;
+    using Gameplay.Game.Services;
     using UnityEngine;
     using Zenject;
 
@@ -9,6 +10,7 @@ namespace Audience
         [Inject] public IEmotionsIconProvider EmotionsIconProvider { get; set; }
         [Inject] public IGuestProvider GuestProvider { get; set; }
         [Inject] public DiContainer Container { get; set; }
+        [Inject] public SoundService SoundService { get; set; }
 
         [Inject] public IAudienceInvolvement AudienceInvolvement { get; set; }
 
@@ -18,6 +20,14 @@ namespace Audience
         [SerializeField] private float yOffSet = 2;
 
         Dictionary<string, GuestView> _guests = new();
+
+        private SoundEffect[] happySoundEffects = new[]
+        {
+            SoundEffect.Applause,
+            SoundEffect.Laugh1,
+            SoundEffect.Laugh2,
+            SoundEffect.Laugh3,
+        };
 
         private void Start()
         {
@@ -38,6 +48,8 @@ namespace Audience
 
         private void OnProgressChanged(string guest, Emotion emotion)
         {
+            var soundEffect = (emotion == Emotion.Happy) ? GetRandomHappySound() : SoundEffect.Boo;
+            SoundService.Play(soundEffect, 0.1f);
             _guests[guest].SpawnEmotion(emotion);
         }
 
@@ -51,6 +63,11 @@ namespace Audience
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(iconsContainer.transform.position, new Vector3(2 * xOffSet, 2 * yOffSet, 0));
+        }
+
+        private SoundEffect GetRandomHappySound()
+        {
+            return happySoundEffects[UnityEngine.Random.Range(0, happySoundEffects.Length)];
         }
     }
 }
