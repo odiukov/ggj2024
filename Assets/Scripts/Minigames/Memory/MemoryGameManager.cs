@@ -13,7 +13,7 @@ namespace Minigames.Fifteen
         [SerializeField] private MemoryCard cardPrefab;
         [SerializeField] private MemoryGameWindow window;
 
-        [SerializeField] private Image frame;
+        [SerializeField] private SpriteRenderer frame;
         [SerializeField] private TMP_Text label;
         [SerializeField] private Color[] _colors;
 
