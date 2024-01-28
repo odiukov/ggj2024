@@ -2685,9 +2685,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 792284799}
     m_Modifications:
+    - target: {fileID: 539475782150131527, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ce05926993631403c92b5965c1296efb, type: 3}
+    - target: {fileID: 1618479491382957387, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1827413257573761245, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
       propertyPath: m_Name
       value: Alerters
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536468281486698644, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485178281347340370, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4166255071892201963, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
       propertyPath: serializationData.Prefab
@@ -2697,6 +2713,10 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4870818545087112184, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+    - target: {fileID: 4872934643749194148, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4988584394573459626, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2745,6 +2765,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 5459073339714900266, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+    - target: {fileID: 5611669550563306912, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786832831320074161, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6766015205136630084, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363763305299222672, guid: e6b5e87a9c93a4e67a57dee97ed343f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
