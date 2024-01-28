@@ -16,7 +16,6 @@ namespace Minigames.Fifteen
 
         public async void InternalClose()
         {
-            Debug.LogError("dsfsf");
             checker.SetActive(true);
             await UniTask.Delay(1000);
             Close();

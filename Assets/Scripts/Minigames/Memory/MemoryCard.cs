@@ -6,23 +6,22 @@ namespace Minigames.Fifteen
 
     public class MemoryCard : MonoBehaviour
     {
-        [SerializeField] private GameObject active;
-        [SerializeField] private GameObject notActive;
+        [SerializeField] private SpriteRenderer renderer;
         
-        public static float ShowInterval = 1;
+        public static float ShowInterval = .4f;
         
         [HideInInspector]
         public int Index;
 
+        public Color Color;
+
         public event Action<int> Plaing; 
         public async UniTask Play()
         {
-            active.SetActive(true);
-            notActive.SetActive(false);
+            renderer.color = Color;
             Plaing?.Invoke(Index);
             await UniTask.WaitForSeconds(ShowInterval);
-            active.SetActive(false);
-            notActive.SetActive(true);
+            renderer.color = Color.white;
             await UniTask.WaitForSeconds(ShowInterval);
         }
 
