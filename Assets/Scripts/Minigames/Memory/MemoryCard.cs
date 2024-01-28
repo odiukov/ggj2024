@@ -9,6 +9,8 @@ namespace Minigames.Fifteen
         [SerializeField] private GameObject active;
         [SerializeField] private GameObject notActive;
         
+        public static float ShowInterval = 1;
+        
         [HideInInspector]
         public int Index;
 
@@ -18,10 +20,10 @@ namespace Minigames.Fifteen
             active.SetActive(true);
             notActive.SetActive(false);
             Plaing?.Invoke(Index);
-            await UniTask.WaitForSeconds(1);
+            await UniTask.WaitForSeconds(ShowInterval);
             active.SetActive(false);
             notActive.SetActive(true);
-            await UniTask.WaitForSeconds(1);
+            await UniTask.WaitForSeconds(ShowInterval);
         }
 
         private void OnMouseDown()

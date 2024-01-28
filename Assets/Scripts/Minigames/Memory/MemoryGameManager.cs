@@ -80,7 +80,7 @@ namespace Minigames.Fifteen
         private async void PlayCombination()
         {
             remembering = true;
-            await UniTask.WaitForSeconds(1);
+            await UniTask.WaitForSeconds(MemoryCard.ShowInterval);
             foreach (var index in combinationIndexes)
             {
                 await cards.FirstOrDefault(x => x.Index == index).Play();
