@@ -49,7 +49,7 @@ MonoBehaviour:
   RowCount: 3
   SizeX: 0.1
   SizeY: 0.2
-  combinationCount: 4
+  combinationCount: 3
 --- !u!1 &2064900647302753599
 GameObject:
   m_ObjectHideFlags: 0
