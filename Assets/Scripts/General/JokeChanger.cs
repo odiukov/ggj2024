@@ -98,9 +98,7 @@ namespace DefaultNamespace.General
             var randomJoke = jokes[UnityEngine.Random.Range(0, jokes.Length)];
             if (CrashProvider.HasCrash)
             {
-                var hexSymbol = (char)0x25A2;
-                var randomChar = randomJoke[UnityEngine.Random.Range(0, randomJoke.Length)];
-                randomJoke = randomJoke.Replace(randomChar, hexSymbol);
+                return ((char)0x25A2).ToString() + (char)0x25A2 + (char)0x25A2;
             }
 
             return randomJoke;
