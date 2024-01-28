@@ -178,7 +178,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _miniGame
       Entry: 7
-      Data: 0|Minigames.SecondGame.CrackPotsGame, Assembly-CSharp
+      Data: 0|Minigames.Fifteen.MemoryMiniGame, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
