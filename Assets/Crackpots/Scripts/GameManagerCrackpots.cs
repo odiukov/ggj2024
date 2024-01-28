@@ -59,7 +59,7 @@ public class GameManagerCrackpots : MonoBehaviour
         if (playing)
         {
             // Check if we need to start any more moles.
-            if (currentMoles.Count <= (score / 10))
+            if (currentMoles.Count <= (Mathf.Abs(score / 10)))
             {
                 // Choose a random mole.
                 int index = Random.Range(0, moles.Count);
