@@ -220,6 +220,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 843446513304558507, guid: a4b9f865682444314a01dbcb7d68b7dc, type: 3}
+    - target: {fileID: 1820525974002474500, guid: a4b9f865682444314a01dbcb7d68b7dc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8225842
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820525974002474500, guid: a4b9f865682444314a01dbcb7d68b7dc, type: 3}
+      propertyPath: m_Size.y
+      value: 3.0543852
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820525974002474500, guid: a4b9f865682444314a01dbcb7d68b7dc, type: 3}
+      propertyPath: m_Offset.x
+      value: 3.2327986
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820525974002474500, guid: a4b9f865682444314a01dbcb7d68b7dc, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34253103
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
