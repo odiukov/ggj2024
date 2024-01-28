@@ -8,7 +8,7 @@ namespace General
 
     public class GlobalAlarm : MonoBehaviour
     {
-        [SerializeField] private Animator Animator { get; set; }
+        [SerializeField] private Animator Animator;
 
         [Inject] private IAlertService AlertService { get; set; }
         [Inject] private ICrashProvider CrashProvider { get; set; }
