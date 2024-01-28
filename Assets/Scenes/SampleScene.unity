@@ -409,6 +409,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209569084}
   m_CullTransparentMesh: 1
+--- !u!95 &261908514 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1709433355835800922, guid: 46197b045a9bf469b96e1fb5acc214ca, type: 3}
+  m_PrefabInstance: {fileID: 2130570181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &337686642
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 470539834}
+  CurAnimator: {fileID: 261908514}
 --- !u!1 &476711616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,6 +2526,10 @@ PrefabInstance:
     - target: {fileID: 5470619276456496902, guid: 46197b045a9bf469b96e1fb5acc214ca, type: 3}
       propertyPath: m_Name
       value: Curtains
+      objectReference: {fileID: 0}
+    - target: {fileID: 5470619276456496902, guid: 46197b045a9bf469b96e1fb5acc214ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

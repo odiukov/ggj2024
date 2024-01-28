@@ -22,6 +22,7 @@ namespace Minigames
         
         private void Start()
         {
+            _animator.keepAnimatorStateOnDisable = true;
             DiContainer.Inject(_miniGame);
         }
 
@@ -34,12 +35,14 @@ namespace Minigames
             }
 
             SoundService.Play(SoundEffect.StartMinigame, 1.0f);
+            AlertService.Starterd();
+            _animator?.SetTrigger("Normal");
             var result = await _miniGame.Run();
+            AlertService.Finished();
             if (result == MiniGameResult.Success)
             {
                 IsActive = false;
                 SoundService.Play(SoundEffect.FinishMinigame, 1.0f);
-                _animator?.SetTrigger("Normal");
                 AlertService.RefreshAlerts();
             }
         }

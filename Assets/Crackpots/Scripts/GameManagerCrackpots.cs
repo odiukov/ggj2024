@@ -13,7 +13,7 @@ public class GameManagerCrackpots : MonoBehaviour
     private HashSet<Mole> currentMoles = new HashSet<Mole>();
     private int score;
     private bool playing = false;
-    private int TotalLeft = 10;
+    private int TotalLeft = 5;
 
     // This is public so the play button can see it.
     public void Start()

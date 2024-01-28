@@ -11,6 +11,8 @@ namespace Player
     {
         float CurrentHealth { get; }
 
+        bool EndGame { get; }
+
         event Action<float> HPChanged;
     }
 
@@ -33,6 +35,10 @@ namespace Player
         private void SetHealth(string guest, Emotion value)
         {
             _currentHealth = Mathf.Min(maxHealth, _currentHealth + (int)value);
+            if(_currentHealth <= 0)
+            {
+                _currentHealth = 0;
+            }
             healthBar.SetText(((int)_currentHealth).ToString());
             HPChanged?.Invoke(_currentHealth);
         }
@@ -43,6 +49,7 @@ namespace Player
         }
 
         public float CurrentHealth => _currentHealth;
+        public bool EndGame => _currentHealth <= 0;
         public event Action<float> HPChanged;
     }
 }

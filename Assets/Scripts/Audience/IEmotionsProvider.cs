@@ -1,6 +1,7 @@
 namespace Audience
 {
     using System;
+    using Player;
     using UnityEngine;
     using Zenject;
     using Random = UnityEngine.Random;
@@ -18,11 +19,14 @@ namespace Audience
     class EmotionsProvider : IEmotionsProvider, ITickable, IEmotionsEventEmitter
     {
         [Inject] public ICrashProvider CrashProvider { get; set; }
+        [Inject] IPlayerHP PlayerHP { get; set; }
+
 
         private const float MaxHappines = 3;
         private const float MinHappines = -3;
 
         private float _currentHappines;
+        float _slowDown = 0.4f;
 
         public Emotion GetEmotion()
         {
@@ -32,9 +36,14 @@ namespace Audience
 
         public void Tick()
         {
+            if (PlayerHP.EndGame)
+            {
+                return;
+            }
+
             if (CrashProvider.HasCrash)
             {
-                _currentHappines -= Time.deltaTime;
+                _currentHappines -= Time.deltaTime * _slowDown;
             }
             else
             {

@@ -7,10 +7,12 @@ namespace Audience
     {
         [Inject] public IEmotionsIconProvider EmotionsIconProvider { get; set; }
 
+        [SerializeField] private Transform emotionHolder;
+
         public void SpawnEmotion(Emotion emotion)
         {
             var icon = EmotionsIconProvider.GetIcon(emotion);
-            Instantiate(icon, gameObject.transform);
+            Instantiate(icon, emotionHolder);
             icon.transform.localPosition = Vector3.zero;
         }
     }

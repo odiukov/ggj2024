@@ -2,6 +2,7 @@ namespace Player
 {
     using System;
     using Audience;
+    using Cysharp.Threading.Tasks;
     using Gameplay.Game.Services;
     using Minigames;
     using UnityEngine;
@@ -10,6 +11,7 @@ namespace Player
     public class Player : MonoBehaviour
     {
         [SerializeField] private Animator Animator;
+        [SerializeField] private Animator CurAnimator;
         
         [Inject]
         IAlertService AlertService { get; set; }
@@ -29,12 +31,14 @@ namespace Player
             Animator.SetTrigger("Joking");
         }
 
-        private void OnHPChanged(float hp)
+        private async void OnHPChanged(float hp)
         {
             if(hp <= 0)
             {
                 SoundService.Play(SoundEffect.Death, 0.1f);
                 Animator.SetTrigger("Death");
+                await UniTask.WaitForSeconds(0.5f);
+                CurAnimator.SetTrigger("Close");
             }
         }
 
