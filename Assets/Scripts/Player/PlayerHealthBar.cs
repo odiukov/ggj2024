@@ -22,7 +22,7 @@ namespace Player
 
         [SerializeField] private TMP_Text healthBar;
 
-        private float maxHealth = 10;
+        private float maxHealth = 100;
 
         private float _currentHealth;
 
@@ -30,6 +30,7 @@ namespace Player
         {
             _currentHealth = maxHealth;
             AudienceInvolvement.ProgressChanged += SetHealth;
+            healthBar.SetText(((int)_currentHealth).ToString());
         }
 
         private void SetHealth(string guest, Emotion value)
