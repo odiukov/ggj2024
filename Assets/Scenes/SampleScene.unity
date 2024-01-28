@@ -1753,17 +1753,23 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 67ac23959e692fd65a276529bb10367e, type: 3}
   - soundEffect: 32
     clip: {fileID: 8300000, guid: b560dc825789171d4ab1390f4d2b20f0, type: 3}
+  - soundEffect: 64
+    clip: {fileID: 8300000, guid: b7447dac8471684fab614ff9c887df2f, type: 3}
   - soundEffect: 128
     clip: {fileID: 8300000, guid: 86b7aed40412b499ba0c8db5b22cfad1, type: 3}
   - soundEffect: 256
-    clip: {fileID: 8300000, guid: 9b2ba83ce52f76163b10a05a5aa6dc31, type: 3}
+    clip: {fileID: 8300000, guid: 43e097284657186488efbf973e0dbd06, type: 3}
   - soundEffect: 512
-    clip: {fileID: 8300000, guid: dcbc0830cdba103cf84f34e56bbde9d3, type: 3}
+    clip: {fileID: 8300000, guid: 26a799a20000ef7698bb151c80733bf7, type: 3}
   - soundEffect: 1024
-    clip: {fileID: 8300000, guid: 63b842683beb081d1aba8078380253fe, type: 3}
+    clip: {fileID: 8300000, guid: 6f8181e9535f17901ae84b5482af953a, type: 3}
   - soundEffect: 2048
-    clip: {fileID: 8300000, guid: f1d04458beaefebdcbb691e2814b9f65, type: 3}
+    clip: {fileID: 8300000, guid: dcbc0830cdba103cf84f34e56bbde9d3, type: 3}
   - soundEffect: 4096
+    clip: {fileID: 8300000, guid: 63b842683beb081d1aba8078380253fe, type: 3}
+  - soundEffect: 8192
+    clip: {fileID: 8300000, guid: f1d04458beaefebdcbb691e2814b9f65, type: 3}
+  - soundEffect: 16384
     clip: {fileID: 8300000, guid: 35343a9618f13ba379ee9db0936c040b, type: 3}
   SoundEnabled: 0
   MusicEnabled: 0
