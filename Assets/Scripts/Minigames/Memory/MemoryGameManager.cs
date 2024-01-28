@@ -4,12 +4,18 @@ namespace Minigames.Fifteen
     using System.Collections.Generic;
     using System.Linq;
     using Cysharp.Threading.Tasks;
+    using TMPro;
     using UnityEngine;
+    using UnityEngine.UI;
 
     public class MemoryGameManager : MonoBehaviour
     {
         [SerializeField] private MemoryCard cardPrefab;
         [SerializeField] private MemoryGameWindow window;
+
+        [SerializeField] private Image frame;
+        [SerializeField] private TMP_Text label;
+        [SerializeField] private Color[] _colors;
 
         List<MemoryCard> cards = new List<MemoryCard>();
 
@@ -24,6 +30,15 @@ namespace Minigames.Fifteen
 
         public static bool remembering;
 
+        public Color remember;
+        public Color repeat;
+
+        private void Remember(bool value)
+        {
+            frame.color = value ? remember : repeat;
+            label.text = value ? "Remember" : "Repeat";
+        }
+
         private void Start()
         {
             remembering = false;
@@ -35,6 +50,7 @@ namespace Minigames.Fifteen
                     var localI = index;
                     var card = Instantiate(cardPrefab, transform);
                     card.Index = localI;
+                    card.Color = _colors[localI];
                     card.Plaing += OnCardPlaing;
                     card.transform.localPosition = new Vector3((j * SizeX), (i * SizeY), 0);
                     cards.Add(card);
@@ -80,6 +96,7 @@ namespace Minigames.Fifteen
         private async void PlayCombination()
         {
             remembering = true;
+            Remember(true);
             await UniTask.WaitForSeconds(MemoryCard.ShowInterval);
             foreach (var index in combinationIndexes)
             {
@@ -88,6 +105,7 @@ namespace Minigames.Fifteen
 
             userCombinationIndexes.Clear();
             remembering = false;
+            Remember(false);
         }
 
         public void CreateCombination()
